@@ -236,7 +236,7 @@ def findPossibleCharsInPlate(imgGrayscale, imgThresh):
     imgThreshCopy = imgThresh.copy()
 
             # find all contours in plate
-    contours, npaHierarchy = cv2.findContours(imgThreshCopy, cv2.RETR_LIST, cv2.CHAIN_APPROX_SIMPLE)
+    imgContours, contours, npaHierarchy = cv2.findContours(imgThreshCopy, cv2.RETR_LIST, cv2.CHAIN_APPROX_SIMPLE)
 
     for contour in contours:                        # for each contour
         possibleChar = PossibleChar.PossibleChar(contour)
